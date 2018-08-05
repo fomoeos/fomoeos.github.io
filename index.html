@@ -994,9 +994,9 @@ $(function(){
 
     function convertToLocalTime(s) {
         var timedate = new Date(s);
-        if (!IsPC()) {
-            return timedate;
-        }
+        //if (!IsPC()) {
+        //    return timedate;
+        //}
 
         var d = new Date();
         var offset = d.getTimezoneOffset() / 60;

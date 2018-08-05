@@ -31,7 +31,7 @@
                         <ul class="dropdown-menu">
                             <li style="padding-left: 5px;padding-right: 5px"><a href="#" id="log-btn">Login With Scatter</a></li>
                             <li style="padding-left: 5px;padding-right: 5px">
-                                <a href="https://eosflare.io/account/contract_account_name" target="_blank">Contract Address</a>
+                                <a href="https://eosflare.io/account/aaaaaaaa5555" target="_blank">Contract Address</a>
                             </li>
                             <li style="padding-left: 5px;padding-right: 5px">
                                 <a href="https://github.com/fomoeos/eosgameworld" target="_blank">Source Code</a>
@@ -313,7 +313,7 @@
                             <br>
                             <div class="row">
                                 <div class="col" id="refUrl">
-                                    https://fomoeos.github.io?ref=refer_account_name
+                                    https://fomoeos.github.io?ref=fomoeosworld
                                 </div>
                             </div>
                         </div>
@@ -603,7 +603,7 @@ $(function(){
     if (ref && ref.length <= 12) {
         ref = ref
     } else {
-        ref = 'refer_account_name';
+        ref = 'fomoeosworld';
     }
 
     function fetchEosPrice() {
@@ -724,7 +724,7 @@ $(function(){
             var memo = seletedTeam + '-' + ref;
             tp.eosTokenTransfer({
                 from: tpAccount,
-                to: 'contract_account_name',
+                to: 'aaaaaaaa5555',
                 amount: money.toFixed(4),
                 tokenName: 'EOS',
                 precision: 4,
@@ -745,7 +745,7 @@ $(function(){
                 sign: true
             };
             var memo = seletedTeam + '-' + ref;
-            eos.transfer(account.name, 'contract_account_name',money.toFixed(4)+' EOS', memo, options).then(function(tx) {
+            eos.transfer(account.name, 'aaaaaaaa5555',money.toFixed(4)+' EOS', memo, options).then(function(tx) {
                 Dialog.init("Success!");
             }).catch(function (e) {
                 e = JSON.parse(e);
@@ -792,7 +792,7 @@ $(function(){
                 var actions = {
                     actions: [
                         {
-                        account: "contract_account_name",
+                        account: "aaaaaaaa5555",
                         name: "withdraw",
                         authorization: [
                             {
@@ -822,7 +822,7 @@ $(function(){
                     sign: true
                 };
 
-                eos.contract('contract_account_name', options).then(function(gameworldcom) {
+                eos.contract('aaaaaaaa5555', options).then(function(gameworldcom) {
                     gameworldcom.withdraw(account.name, options).then(function (tx) {
                         Dialog.init('Success!');
                     }).catch(function (e) {
@@ -848,7 +848,7 @@ $(function(){
     }
 
     function fetchRound() {
-        api.getTableRows(true, "contract_account_name", "contract_account_name", "round").then(function (data) {
+        api.getTableRows(true, "aaaaaaaa5555", "aaaaaaaa5555", "round").then(function (data) {
             if (data.rows.length == 0) {
                 money = calMoney($("#keysToBuy").val(), 0);
                 $("#current-money").html("@ "+money+" EOS");
@@ -918,7 +918,7 @@ $(function(){
                 $("#refUrl").html(refUrl);
             }
 
-            api.getTableRows(true, "contract_account_name", accountName, "player").then(function (data) {
+            api.getTableRows(true, "aaaaaaaa5555", accountName, "player").then(function (data) {
 
                 if (data.rows.length >= 1) {
                     var row = data.rows[0];
@@ -975,7 +975,7 @@ $(function(){
         $(".gains").html("0.0000 EOS");
         $(".gains-usdt").html("≙ 0.00 USDT");
         $("#cost").html("0.0000 EOS");
-        $("#refUrl").html("https://fomoeos.github.io?ref=refer_account_name");
+        $("#refUrl").html("https://fomoeos.github.io?ref=fomoeosworld");
         //$(".scatter").show();
     }
 

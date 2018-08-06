@@ -480,6 +480,7 @@ color: #e6ae49;
 <script src="js/eos.min.js"></script>
 <script src="js/tp.js"></script>
 <script src="js/mDialogMin.js"></script>
+<script src="js/moment.min.js"></script>
 <script src="https://cdn.bootcss.com/bignumber.js/7.2.1/bignumber.min.js"></script>
 
 <script>
@@ -993,10 +994,8 @@ $(function(){
     }
 
     function convertToLocalTime(s) {
-        var timedate = new Date(s);
-        //if (!IsPC()) {
-        //    return timedate;
-        //}
+        var m = moment(s, "YYYY-MM-DDTHH:mm:ss");
+        var timedate = m.toDate();
 
         var d = new Date();
         var offset = d.getTimezoneOffset() / 60;
